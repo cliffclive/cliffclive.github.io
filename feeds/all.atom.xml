@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science MVP</title><link href="https://datasciencemvp.com/" rel="alternate"></link><link href="https://datasciencemvp.com/feeds/all.atom.xml" rel="self"></link><id>https://datasciencemvp.com/</id><updated>2019-03-26T16:40:00-07:00</updated><entry><title>Welcome to Data Science MVP!</title><link href="https://datasciencemvp.com/articles/2019/03/26/welcome/" rel="alternate"></link><published>2019-03-26T16:40:00-07:00</published><updated>2019-03-26T16:40:00-07:00</updated><author><name>Cliff Clive</name></author><id>tag:datasciencemvp.com,2019-03-26:/articles/2019/03/26/welcome/</id><summary type="html">&lt;p&gt;Pardon the extremely click-baity blog title. There's a good reason for that, I promise. In the world of data science, MVP stands for &lt;strong&gt;Minimum Viable Product&lt;/strong&gt;. It's a first draft of a data science project in which we've put together enough of our workflow to read in some data, put …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pardon the extremely click-baity blog title. There's a good reason for that, I promise. In the world of data science, MVP stands for &lt;strong&gt;Minimum Viable Product&lt;/strong&gt;. It's a first draft of a data science project in which we've put together enough of our workflow to read in some data, put it into a workable format for our tools to handle, train a basic model, and calculate some preliminary results.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science MVP</title><link href="https://datasciencemvp.com/" rel="alternate"></link><link href="https://datasciencemvp.com/feeds/all.atom.xml" rel="self"></link><id>https://datasciencemvp.com/</id><updated>2019-04-16T00:00:00-07:00</updated><entry><title>The Data Science MVP Template</title><link href="https://datasciencemvp.com/articles/2019/04/16/datasciencemvp_thetemplate/" rel="alternate"></link><published>2019-04-16T00:00:00-07:00</published><updated>2019-04-16T00:00:00-07:00</updated><author><name>Cliff Clive</name></author><id>tag:datasciencemvp.com,2019-04-16:/articles/2019/04/16/datasciencemvp_thetemplate/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/cliffclive/datasciencemvp"&gt;Data Science MVP&lt;/a&gt;  is a template to jumpstart a minimum viable product (MVP), or rough draft of a data science project.&lt;/p&gt;
+&lt;p&gt;It is implemented as a &lt;a href="https://cookiecutter.readthedocs.io/en/latest/"&gt;cookiecutter template&lt;/a&gt; that generates a directory tree containing subdirectories that hold data, notebooks, reports, source code, etc., with code stubs that present a logical …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://github.com/cliffclive/datasciencemvp"&gt;Data Science MVP&lt;/a&gt;  is a template to jumpstart a minimum viable product (MVP), or rough draft of a data science project.&lt;/p&gt;
+&lt;p&gt;It is implemented as a &lt;a href="https://cookiecutter.readthedocs.io/en/latest/"&gt;cookiecutter template&lt;/a&gt; that generates a directory tree containing subdirectories that hold data, notebooks, reports, source code, etc., with code stubs that present a logical workflow for assembling a pipeline for a reproducible data science project. (In its current version it is a modification of the &lt;a href="https://drivendata.github.io/cookiecutter-data-science/"&gt;cookiecutter data-science&lt;/a&gt; template, although that is likely to change in the future.)&lt;/p&gt;
+&lt;p&gt;At its heart is a Jupyter notebook (stored as &lt;code&gt;mpv.ipynb&lt;/code&gt; in the &lt;code&gt;/notebooks&lt;/code&gt; directory) with markdown and code cells pre-filled with suggestions for how to proceed through building an MVP. Each code cell has a commented-out &lt;code&gt;%%writefile&lt;/code&gt; command that will write the cell's contents to into a Python script stored in the &lt;code&gt;/src&lt;/code&gt; directory. In the top-level directory, there is a &lt;code&gt;main.py&lt;/code&gt; script that executes the entire pipeline as implemented in the &lt;code&gt;/src&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Once the &lt;code&gt;mvp.ipynb&lt;/code&gt; notebook is completed and the code is exported to &lt;code&gt;/src&lt;/code&gt;, the data scientist can focus on making iterative improvements to each step in the pipeline. When the project is complete, it should be easy to export the models and source code into a Python package that can be shared with others.&lt;/p&gt;
+&lt;h2&gt;How do I use this?&lt;/h2&gt;
+&lt;h3&gt;Install cookiecutter and generate the template project files&lt;/h3&gt;
+&lt;p&gt;First you will need to install &lt;code&gt;cookiecutter&lt;/code&gt; if you haven't already&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install cookiecutter
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and then run the following command from the terminal to create a new project directory loaded with the files and folders from the template:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cookiecutter https://github.com/cliffclive/datasciencemvp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The prompt in the terminal will guide you through naming your project and its filepath, and then populate the project directories. &lt;/p&gt;
+&lt;p&gt;Once it's all set up, initialize a git repo in the project's top level directory and you can get to work.&lt;/p&gt;
+&lt;h3&gt;Read through &lt;code&gt;main.py&lt;/code&gt; and the default scripts in &lt;code&gt;/src&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;After you've built the template, you'll want to go into the &lt;code&gt;/notebooks&lt;/code&gt; folder and start editing &lt;code&gt;mvp.ipynb&lt;/code&gt;. But first take a look at &lt;code&gt;main.py&lt;/code&gt; in the top level directory, which is reproduced here:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;src.data.make_dataset&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;src.features.build_features&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;src.models.train_model&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;src.models.predict_model&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;src.visualization.visualize&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Usage: &lt;/span&gt;
+&lt;span class="c1"&gt;# $ python main.py&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;features&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;build_features&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;train_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;visualization&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;visualize&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note that &lt;code&gt;main.py&lt;/code&gt; is importing all of the scripts that will be built by the &lt;code&gt;%%writefile&lt;/code&gt; commands in &lt;code&gt;mvp.ipynb&lt;/code&gt;, and that each of these scripts contains a &lt;code&gt;run()&lt;/code&gt; function that executes a module of the pipeline. If you run this script at the commandline right out of the box, it will produce this output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ python main.py
+src.data.make_dataset.run&lt;span class="o"&gt;()&lt;/span&gt;
+...processing raw data
+...saving interim data
+...processing interim data
+...processing external data
+...
+src.features.build_features.run&lt;span class="o"&gt;()&lt;/span&gt;
+...reading interim data
+...building features dataframe
+...performing train/test split
+...saving processed data
+...
+src.models.train_model.run&lt;span class="o"&gt;()&lt;/span&gt;
+...importing ml models
+...building ml model
+...reading train/test datasets
+...training ml model
+...saving ml model
+...
+src.models.predict_model.run&lt;span class="o"&gt;()&lt;/span&gt;
+...loading trained model
+...loading new data
+...making some predictions
+...
+src.visualization.visualize.run&lt;span class="o"&gt;()&lt;/span&gt;
+...drawing some charts
+...saving the charts
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As you can see, the default &lt;code&gt;run()&lt;/code&gt; functions provided in the repo each print out their name and some suggestions for the types of actions you will want to implement inside them. Note that with no inputs and outputs for any of these &lt;code&gt;run()&lt;/code&gt; functions, these are expected to run independently of each other. But you are free to reimplement these however you see fit.&lt;/p&gt;
+&lt;h3&gt;Work through &lt;code&gt;mvp.ipynb&lt;/code&gt; and build the first draft of your pipeline&lt;/h3&gt;
+&lt;p&gt;With the dummy code in the included scripts, and the code stubs in the &lt;code&gt;mvp.ipynb&lt;/code&gt; notebook, you should have a pretty good idea what steps to take to get a baseline model up and running. &lt;/p&gt;
+&lt;p&gt;Keep in mind that right now we're just concerned with engineering a pipeline that builds &lt;em&gt;a&lt;/em&gt; model, &lt;em&gt;any&lt;/em&gt; model. It doesn't have to be a great model. We're just engineering a system that can quickly translate ideas into results. Your best ideas will come later, and they'll come faster if you have the right tools in place to quickly test and refine them.&lt;/p&gt;
+&lt;h3&gt;Interpret your results and iterate on your pipeline&lt;/h3&gt;
+&lt;p&gt;When you're done with your MVP, you should have a trained model, and some charts and reports to interpret how well your model performs. This gives you everything you need to go back and make changes at any step where you think improvements can be made, whether it's in collecting more data, engineering more features, choosing a new model, and so on.&lt;/p&gt;
+&lt;p&gt;If all of the steps are running independently, you can re-run your pipeline after any changes and see how they impact the end-to-end workflow. Take care to save any data that you've downloaded or formatted, and re-load the data from disc any time you re-run your pipeline... unless you're working on the Obtaining or Scrubbing data stages. Quick iterations are key to staying productive.&lt;/p&gt;
+&lt;h3&gt;Save your work!&lt;/h3&gt;
+&lt;p&gt;At this point, how you proceed is up to you. Your reproducible pipeline lives in the scripts in the &lt;code&gt;/src&lt;/code&gt; directory and any updates need to be added to those files in order to run the pipeline with &lt;code&gt;main.py&lt;/code&gt;. You can use Jupyter notebooks, an interactive Python environment, an IDE, or a text editor and the commandline to play with new ideas -- &lt;code&gt;/src&lt;/code&gt; is a Python package so you can import any of the functions you've written from the top directory. &lt;/p&gt;
+&lt;p&gt;Just make sure that every time you find something that works, you edit the relevant file in &lt;code&gt;/src&lt;/code&gt; and run &lt;code&gt;main.py&lt;/code&gt; again make sure it doesn't break anything. And commit those changes to git right away!&lt;/p&gt;
+&lt;h3&gt;Come back later and check for updates&lt;/h3&gt;
+&lt;p&gt;This is still a work in progress. I'm playing around with it, and my students at &lt;a href="https://thisismetis.com"&gt;Metis&lt;/a&gt; are working with it and providing feedback. I'd love to hear your suggestions for how to make this workflow even better.&lt;/p&gt;
+&lt;p&gt;I wouldn't recommend applying any of these changes to a &lt;code&gt;datasciencemvp&lt;/code&gt; project that you're already working on -- once you've built a project from the template you're free to make your own adjustments. But if everything is working as it should, the hope is that this will help you finish projects faster and be ready to use the latest version on your next one.&lt;/p&gt;</content><category term="python"></category><category term="datascience"></category><category term="engineering"></category><category term="workflow"></category><category term="mvp"></category><category term="etl"></category></entry><entry><title>Welcome to Data Science MVP!</title><link href="https://datasciencemvp.com/articles/2019/03/26/welcome/" rel="alternate"></link><published>2019-03-26T16:40:00-07:00</published><updated>2019-03-26T16:40:00-07:00</updated><author><name>Cliff Clive</name></author><id>tag:datasciencemvp.com,2019-03-26:/articles/2019/03/26/welcome/</id><summary type="html">&lt;p&gt;Pardon the extremely click-baity blog title. There's a good reason for that, I promise. In the world of data science, MVP stands for &lt;strong&gt;Minimum Viable Product&lt;/strong&gt;. It's a first draft of a data science project in which we've put together enough of our workflow to read in some data, put …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pardon the extremely click-baity blog title. There's a good reason for that, I promise. In the world of data science, MVP stands for &lt;strong&gt;Minimum Viable Product&lt;/strong&gt;. It's a first draft of a data science project in which we've put together enough of our workflow to read in some data, put it into a workable format for our tools to handle, train a basic model, and calculate some preliminary results.&lt;/p&gt;
 &lt;p&gt;The results can be absolute garbage, and that's okay.&lt;/p&gt;
 &lt;p&gt;An MVP is an engineering effort, meant to provide us with a pipeline to quickly develop new iterations of our work, and to produce a baseline model that we can use to benchmark our more serious findings.&lt;/p&gt;
 &lt;h2&gt;There are lots of tools to this trade&lt;/h2&gt;

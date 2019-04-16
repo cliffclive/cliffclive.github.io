@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>The Data Science MVP Template - Data Science MVP</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://datasciencemvp.com/articles/2019/04/16/datasciencemvp_thetemplate/">
+
+        <meta name="author" content="Cliff Clive" />
+        <meta name="keywords" content="python,datascience,engineering,workflow,mvp,etl" />
+        <meta name="description" content="Data Science MVP is a template to jumpstart a minimum viable product (MVP), or rough draft of a data science project. It is implemented as a cookiecutter template that generates a directory tree containing subdirectories that hold data, notebooks, reports, source code, etc., with code stubs that present a logical …" />
+
+        <meta property="og:site_name" content="Data Science MVP" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="The Data Science MVP Template"/>
+        <meta property="og:url" content="https://datasciencemvp.com/articles/2019/04/16/datasciencemvp_thetemplate/"/>
+        <meta property="og:description" content="Data Science MVP is a template to jumpstart a minimum viable product (MVP), or rough draft of a data science project. It is implemented as a cookiecutter template that generates a directory tree containing subdirectories that hold data, notebooks, reports, source code, etc., with code stubs that present a logical …"/>
+        <meta property="article:published_time" content="2019-04-16" />
+            <meta property="article:section" content="blog" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="datascience" />
+            <meta property="article:tag" content="engineering" />
+            <meta property="article:tag" content="workflow" />
+            <meta property="article:tag" content="mvp" />
+            <meta property="article:tag" content="etl" />
+            <meta property="article:author" content="Cliff Clive" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://datasciencemvp.com/theme/css/bootstrap.yeti.min.css" type="text/css"/>
+    <link href="https://datasciencemvp.com/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://datasciencemvp.com/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://datasciencemvp.com/theme/css/style.css" type="text/css"/>
+
+        <link href="https://datasciencemvp.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data Science MVP ATOM Feed"/>
+
+        <link href="https://datasciencemvp.com/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data Science MVP blog ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://datasciencemvp.com/" class="navbar-brand">
+Data Science MVP            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://datasciencemvp.com/pages/about-us/">
+                             About Us
+                          </a></li>
+                         <li><a href="https://datasciencemvp.com/pages/resources/">
+                             Resources
+                          </a></li>
+                        <li class="active">
+                            <a href="https://datasciencemvp.com/category/blog">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://datasciencemvp.com/articles/2019/04/16/datasciencemvp_thetemplate/"
+                       rel="bookmark"
+                       title="Permalink to The Data Science MVP Template">
+                        The Data Science MVP Template
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-04-16T00:00:00-07:00"> Tue 16 April 2019</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://datasciencemvp.com/tag/python">python</a>
+        /
+	<a href="https://datasciencemvp.com/tag/datascience">datascience</a>
+        /
+	<a href="https://datasciencemvp.com/tag/engineering">engineering</a>
+        /
+	<a href="https://datasciencemvp.com/tag/workflow">workflow</a>
+        /
+	<a href="https://datasciencemvp.com/tag/mvp">mvp</a>
+        /
+	<a href="https://datasciencemvp.com/tag/etl">etl</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><a href="https://github.com/cliffclive/datasciencemvp">Data Science MVP</a>  is a template to jumpstart a minimum viable product (MVP), or rough draft of a data science project.</p>
+<p>It is implemented as a <a href="https://cookiecutter.readthedocs.io/en/latest/">cookiecutter template</a> that generates a directory tree containing subdirectories that hold data, notebooks, reports, source code, etc., with code stubs that present a logical workflow for assembling a pipeline for a reproducible data science project. (In its current version it is a modification of the <a href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data-science</a> template, although that is likely to change in the future.)</p>
+<p>At its heart is a Jupyter notebook (stored as <code>mpv.ipynb</code> in the <code>/notebooks</code> directory) with markdown and code cells pre-filled with suggestions for how to proceed through building an MVP. Each code cell has a commented-out <code>%%writefile</code> command that will write the cell's contents to into a Python script stored in the <code>/src</code> directory. In the top-level directory, there is a <code>main.py</code> script that executes the entire pipeline as implemented in the <code>/src</code> directory.</p>
+<p>Once the <code>mvp.ipynb</code> notebook is completed and the code is exported to <code>/src</code>, the data scientist can focus on making iterative improvements to each step in the pipeline. When the project is complete, it should be easy to export the models and source code into a Python package that can be shared with others.</p>
+<h2>How do I use this?</h2>
+<h3>Install cookiecutter and generate the template project files</h3>
+<p>First you will need to install <code>cookiecutter</code> if you haven't already</p>
+<div class="highlight"><pre><span></span>pip install cookiecutter
+</pre></div>
+
+
+<p>and then run the following command from the terminal to create a new project directory loaded with the files and folders from the template:</p>
+<div class="highlight"><pre><span></span>cookiecutter https://github.com/cliffclive/datasciencemvp
+</pre></div>
+
+
+<p>The prompt in the terminal will guide you through naming your project and its filepath, and then populate the project directories. </p>
+<p>Once it's all set up, initialize a git repo in the project's top level directory and you can get to work.</p>
+<h3>Read through <code>main.py</code> and the default scripts in <code>/src</code></h3>
+<p>After you've built the template, you'll want to go into the <code>/notebooks</code> folder and start editing <code>mvp.ipynb</code>. But first take a look at <code>main.py</code> in the top level directory, which is reproduced here:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">src.data.make_dataset</span>
+<span class="kn">import</span> <span class="nn">src.features.build_features</span>
+<span class="kn">import</span> <span class="nn">src.models.train_model</span>
+<span class="kn">import</span> <span class="nn">src.models.predict_model</span>
+<span class="kn">import</span> <span class="nn">src.visualization.visualize</span>
+
+<span class="c1"># Usage: </span>
+<span class="c1"># $ python main.py</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">make_dataset</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">build_features</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">train_model</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">predict_model</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">src</span><span class="o">.</span><span class="n">visualization</span><span class="o">.</span><span class="n">visualize</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Note that <code>main.py</code> is importing all of the scripts that will be built by the <code>%%writefile</code> commands in <code>mvp.ipynb</code>, and that each of these scripts contains a <code>run()</code> function that executes a module of the pipeline. If you run this script at the commandline right out of the box, it will produce this output:</p>
+<div class="highlight"><pre><span></span> $ python main.py
+src.data.make_dataset.run<span class="o">()</span>
+...processing raw data
+...saving interim data
+...processing interim data
+...processing external data
+...
+src.features.build_features.run<span class="o">()</span>
+...reading interim data
+...building features dataframe
+...performing train/test split
+...saving processed data
+...
+src.models.train_model.run<span class="o">()</span>
+...importing ml models
+...building ml model
+...reading train/test datasets
+...training ml model
+...saving ml model
+...
+src.models.predict_model.run<span class="o">()</span>
+...loading trained model
+...loading new data
+...making some predictions
+...
+src.visualization.visualize.run<span class="o">()</span>
+...drawing some charts
+...saving the charts
+...
+</pre></div>
+
+
+<p>As you can see, the default <code>run()</code> functions provided in the repo each print out their name and some suggestions for the types of actions you will want to implement inside them. Note that with no inputs and outputs for any of these <code>run()</code> functions, these are expected to run independently of each other. But you are free to reimplement these however you see fit.</p>
+<h3>Work through <code>mvp.ipynb</code> and build the first draft of your pipeline</h3>
+<p>With the dummy code in the included scripts, and the code stubs in the <code>mvp.ipynb</code> notebook, you should have a pretty good idea what steps to take to get a baseline model up and running. </p>
+<p>Keep in mind that right now we're just concerned with engineering a pipeline that builds <em>a</em> model, <em>any</em> model. It doesn't have to be a great model. We're just engineering a system that can quickly translate ideas into results. Your best ideas will come later, and they'll come faster if you have the right tools in place to quickly test and refine them.</p>
+<h3>Interpret your results and iterate on your pipeline</h3>
+<p>When you're done with your MVP, you should have a trained model, and some charts and reports to interpret how well your model performs. This gives you everything you need to go back and make changes at any step where you think improvements can be made, whether it's in collecting more data, engineering more features, choosing a new model, and so on.</p>
+<p>If all of the steps are running independently, you can re-run your pipeline after any changes and see how they impact the end-to-end workflow. Take care to save any data that you've downloaded or formatted, and re-load the data from disc any time you re-run your pipeline... unless you're working on the Obtaining or Scrubbing data stages. Quick iterations are key to staying productive.</p>
+<h3>Save your work!</h3>
+<p>At this point, how you proceed is up to you. Your reproducible pipeline lives in the scripts in the <code>/src</code> directory and any updates need to be added to those files in order to run the pipeline with <code>main.py</code>. You can use Jupyter notebooks, an interactive Python environment, an IDE, or a text editor and the commandline to play with new ideas -- <code>/src</code> is a Python package so you can import any of the functions you've written from the top directory. </p>
+<p>Just make sure that every time you find something that works, you edit the relevant file in <code>/src</code> and run <code>main.py</code> again make sure it doesn't break anything. And commit those changes to git right away!</p>
+<h3>Come back later and check for updates</h3>
+<p>This is still a work in progress. I'm playing around with it, and my students at <a href="https://thisismetis.com">Metis</a> are working with it and providing feedback. I'd love to hear your suggestions for how to make this workflow even better.</p>
+<p>I wouldn't recommend applying any of these changes to a <code>datasciencemvp</code> project that you're already working on -- once you've built a project from the template you're free to make your own adjustments. But if everything is working as it should, the hope is that this will help you finish projects faster and be ready to use the latest version on your next one.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'datasciencemvp'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2019-04-16-datasciencemvp_thetemplate';
+                        this.page.url = 'https://datasciencemvp.com/articles/2019/04/16/datasciencemvp_thetemplate/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/cliffordclive/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/cliffclarkclive"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://www.thisismetis.com/" target="_blank">Metis</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.mixcloud.com/dj-conxn/" target="_blank">MixCloud</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Cliff Clive
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://datasciencemvp.com/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://datasciencemvp.com/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://datasciencemvp.com/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'datasciencemvp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-137519301-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
